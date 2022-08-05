@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Home from "./Home";
-import './App.css';
+import '../styles/App.css';
 import Navigation from './Navigation';
 import axios from 'axios';
 import Moment from 'moment';
@@ -64,12 +63,7 @@ const NewService = () => {
 
            })}
         }
-        const goBack = () => (
-    
-            <Link to ="/">            
-              <button className="btn btn-primary float-end">Home Page</button>
-                </Link>           
-            )
+        
         
     const destroy = (serviceId) => {
 
@@ -88,10 +82,7 @@ const NewService = () => {
 
         <Layout title="Edit or Register New Service " description="Add or Edit Service Information" button={true} className="container">
 
-        {/* <div className='container'> */}
-
-{/* <div className='container'>{goBack()}
-            </div> */}
+   
              
     <div className='row'>
     <div className='col-md-6'>

@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Home from "./Home";
-import './App.css';
+import '../styles/App.css';
 import axios from 'axios';
 import {Link} from "react-router-dom"
 
@@ -18,41 +17,6 @@ const SearchProperty = (props) => {
          props.searchTerm({...search, [name]:  event.target.value})
     }
 
-
-
-//     function handleChange(event) {
-//         const {value,name} = event.target;
-//         console.log(value)
-//         console.log(name)
-//         console.log(search)
-//         props.searchTerm(value) 
-//         setSearch(prevValue => {
-//             if(name === "firstName") {
-//                 return {
-//                 firstName: value,
-//                 lastName : prevValue.lastName
-//             };
-//             } else if  (name === "lastName") {
-//             return {
-//                 firstName : prevValue.firstName,
-//                 lastName : value
-//             }
-//         }
-//     })
-    
-// }
-    // const handleChange = name => event => {
-    //     //console.log(e.target.value)
-    //     const {name ,value} = event.target
-    //     console.log(value)
-    //     //const value = e.target.value
-    //     // console.log(value)
-    //     // console.log(name)            
-    //     setSearch({...search, [name]:  event.target.value})
-    //     //setSearch({...search, [name] : value})
-    //     console.log(search)
-    //     props.searchTerm(search)
-    // }
 
     return (
         <div className='col-12'>

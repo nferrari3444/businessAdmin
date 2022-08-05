@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Home from "./Home";
-import './App.css';
+import '../styles/App.css';
 import axios from 'axios';
 import {Link} from "react-router-dom"
 import Layout from "./Layout";
@@ -127,18 +126,7 @@ const Customer = () => {
          );
 
 
-const goBack = () => (
-    
-<Link to ="/">
-            
-            <button className="btn btn-primary float-end">Home Page</button>
-            
-            </Link>
-            
-)
-
-// {goBack()}
-    return (
+  return (
         
         
         <Layout title="Add New Customer" description="Provide Customer Information" button = {true} btnDescription= "Home Page" className="container-fluid">
@@ -146,7 +134,7 @@ const goBack = () => (
         
         <div className='container mt-5'>
        
-       {/* {goBack()} */}
+
        {showSuccess()}
         {showError()}
         {newUser()}

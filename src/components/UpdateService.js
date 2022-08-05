@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Home from "./Home";
-import './App.css';
+import '../styles/App.css';
 import Navigation from './Navigation';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
@@ -106,16 +105,10 @@ return (
 
 
     <div>
-    {/* <div className='container mr-1'>
-    {adminPanel()}
-    
-
-    </div> */}
    
         
     <div className='container'>
     {showSuccess()}
-    {/* <h2>Update Service</h2> */}
 
     <form  onSubmit ={clickSubmit} className='row g-3 mt-3'>
         <div className='row'>

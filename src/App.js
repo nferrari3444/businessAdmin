@@ -1,17 +1,16 @@
-import './App.css';
+import './styles/App.css';
 
 // import {Route, Switch} from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Navigation from './Navigation';
-import Home from './Home'
-import AddPurchase from './AddPurchase';
-import Customer from './NewUser'
-import NewUser from './NewUser'
-import GetCustomers from './ViewCustomers';
-import GetOrders from './History'
-import UpdateOrder from './UpdateOrder'
-import NewService from './AddService'
-import UpdateService from './UpdateService'
+import Navigation from './components/Navigation';
+import AddPurchase from './components/AddPurchase';
+import Customer from './components/NewUser'
+import NewUser from './components/NewUser'
+import GetCustomers from './components/ViewCustomers';
+import GetOrders from './components/History'
+import UpdateOrder from './components/UpdateOrder'
+import NewService from './components/AddService'
+import UpdateService from './components/UpdateService'
 
 //const App = () => (<div>Hello from React</div>)
 
@@ -33,23 +32,4 @@ function App() {
     </Router>
   )
 }
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
-
-
 export default App;

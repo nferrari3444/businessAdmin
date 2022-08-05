@@ -7,6 +7,20 @@
 }
 }
 
+.add-counter {
+  width : 2rem;
+  height: 1rem;
+  display: inline-block;
+  position: relative
+  
+}
+
+.counter {
+margin-left: 5px;
+width : 2.3rem;
+  height: 2rem;
+}
+
 .new-service{
   border-right: green;
   width: 300px;

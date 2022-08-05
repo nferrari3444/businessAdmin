@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Home from "./Home";
-import './App.css';
+import '../styles/App.css';
 import axios from 'axios';
 import {Link} from "react-router-dom"
 import SearchProperty from "./Search";
@@ -11,13 +10,6 @@ const GetCustomers = () => {
     const [customers, setCustomers] = useState([]);
     const [filteredCustomers, setFilteredCustomers] = useState([]);
     const [q, setQ] = useState("");
-
-        // name:"",
-        // email: "",
-        // phone: "",
-        // country: "",
-        // city: ""});
-
     
     const customerData = () => {
         axios.get('http://localhost:3001/viewCustomers')
@@ -45,7 +37,7 @@ const {firstName, lastName} = item
 console.log(firstName)
 console.log(lastName)
 
-if (firstName != '') {
+if (firstName !== '') {
     setQ(firstName)
 }
 else{
@@ -55,7 +47,7 @@ else{
 
 const filtered = customers.filter(customer => {
     console.log(customer)
-    if (firstName != ''){
+    if (firstName !== ''){
     return  customer.name
     .toLowerCase()
     .indexOf(q.toLowerCase()) > -1
@@ -71,12 +63,7 @@ const filtered = customers.filter(customer => {
 setFilteredCustomers(filtered)
 };
 
-const goBack = () => (
-    
-    <Link to ="/">            
-                <button className="btn btn-primary float-end">Home Page</button>
-                </Link>           
-    )
+
 
 return (
     
@@ -84,9 +71,6 @@ return (
 
     <div>
      
-
-    {/* <div className='container'>{goBack()}
-            </div> */}
     <div className='container'>
     <SearchProperty searchTerm = {childToParent}/>
     </div>

@@ -1,7 +1,6 @@
 
 import React, {useEffect, useState} from 'react'
-import Home from "./Home";
-import './App.css';
+import '../styles/App.css';
 import Navigation from './Navigation';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
@@ -29,19 +28,10 @@ useEffect(() => {
     
 }, [])
 
-      //  next() // Once you find the orderById, execute the callback
+    
 
 
 const {name, lastName, country, city, service, price,  date, note} = orderToUpdate
-
-// console.log(props.match)
-
-// console.log('typepropsmatch')
-// console.log(typeof(props.match))
-
-// console.log('type props')
-// console.log(typeof(props))
- //const orderId = params.orderId
 
 const init = (orderId) => {
     
@@ -127,12 +117,6 @@ const clickSubmit = (event) =>
        
 }   
 
-const goBack = () => (
-    
-    <Link to ="/">            
-                <button className="btn btn-primary ml-2 float-end">Home Page</button>
-                </Link>           
-    )
 
 const goHistory = () => (
     
@@ -149,16 +133,7 @@ return (
     <Layout title="Update Order " description="Change Order Information" button={true} buttonHistory= {true} btnDescription='Home Page' className="container-fluid">
 
     <div>
-    {/* <div className='container mr-1'>{goBack()}
-    
-
-            </div>
-
-            <div className='container mr-1'>{goHistory()}
-    
-
-    </div> */}
-
+ 
     <div className='container mt-5'>
     {/* <h2>Update Order</h2> */}
    <form   onSubmit={clickSubmit}>

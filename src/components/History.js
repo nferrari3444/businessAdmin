@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Home from "./Home";
-import './App.css';
+import '../styles/App.css';
 import axios from 'axios';
 import {Link, useSearchParams} from "react-router-dom"
 import SearchProperty from "./Search";
@@ -45,7 +44,7 @@ const {firstName, lastName} = item;
 console.log(firstName)
 console.log(lastName)
 
-if (firstName != '') {
+if (firstName !== '') {
     setQ(firstName)
     
 } else {
@@ -63,7 +62,7 @@ console.log(q)
 
 const filtered = orders.filter((order) => {
     console.log(order.name)
-    if (firstName != '') {
+    if (firstName !== '') {
 
         return order.name
         .toString()
@@ -95,12 +94,6 @@ const updateOrder = (e) => (
     setshowUpdate(true)
 )
 
-const goBack = () => (
-    
-    <Link to ="/">            
-                <button className="btn btn-primary float-end">Home Page</button>
-                </Link>           
-    )
 
 return (
     

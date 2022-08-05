@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import Home from "./Home";
-import './App.css';
+
+import '../styles/App.css';
 import Navigation from './Navigation';
 import axios from 'axios';
 import Moment from 'moment';
@@ -18,6 +18,7 @@ const AddPurchase = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [services, setServices] = useState([]);
     const [userNoRegistered, setUserNoRegistered] = useState('');
+    const [count, setCount] = useState(1);
 
     const getServices = () => {
 
@@ -35,7 +36,11 @@ const AddPurchase = () => {
         getServices();
        } , []);
 
-    
+    const handleCounter = (event) => {
+        const value = event.target.value
+
+        setCount(value)
+    }
      const handleChange = (event) =>
      {
          
@@ -101,9 +106,6 @@ const AddPurchase = () => {
             else {
                 setErrorMessage('Se deben completar todos los campos')
                 setSuccessMessage('')
-            
-            
-
             }
              };
 
@@ -116,8 +118,6 @@ const AddPurchase = () => {
          );
 
         const showNoUser = () => (
-
-           
 
         <div className='alert alert-danger' style= {{display : userNoRegistered  ? '': 'none'}}>
         {userNoRegistered}
@@ -135,8 +135,6 @@ const AddPurchase = () => {
             }
         }
                 
-        
-
      return (
         <Layout title="Manage Your Business" description="Add New Order"  button = {false} className="container-fluid">
 
@@ -195,9 +193,9 @@ const AddPurchase = () => {
                 
                  <div className='row gy-4 mt-4'>
                  <div className='form-group col-md-4'>
-               
+                
                  <label>Choose a Service: </label>
-
+                <div className='d-flex'>
                  { <select  value= {service.name} onChange={handleChange} name ='service' id='services'>
                    {services.map((item,key) => (
                     <option key = {key} value ={item.id}>{item.name}</option>
@@ -205,10 +203,17 @@ const AddPurchase = () => {
                    ))}
                    
                  </select>
+           
                  }
+
+                 <input className ='counter' type="number" value= {count} onChange={handleCounter}
+
+/>   
+</div>
+                 
                  </div>
                  
-
+               
                  <div className='form-group col-md-4'>
                  <div className='input-space'>
                  <label>Email
