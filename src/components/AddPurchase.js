@@ -36,11 +36,14 @@ const AddPurchase = () => {
         getServices();
        } , []);
 
-    const handleCounter = (event) => {
-        const value = event.target.value
+    const handleIncrease = () => {
+        setCount(count => count +1)
+    };
 
-        setCount(value)
-    }
+    const handleDecrease = () => {
+        setCount(count => count - 1)
+    };
+
      const handleChange = (event) =>
      {
          
@@ -50,6 +53,7 @@ const AddPurchase = () => {
             const selectedProduct = services.find(service => service.name == value)
             console.log(selectedProduct)
             console.log(selectedProduct.price)
+            setCount(1)
            setOrder({...order, service: selectedProduct.name , price: selectedProduct.price})
          }
          else {
@@ -125,7 +129,6 @@ const AddPurchase = () => {
         </div>);
 
         const showSuccess = () => {
-            console.log(success)
             if (success) {
             return (
             <div className='alert alert-info' >
@@ -195,7 +198,7 @@ const AddPurchase = () => {
                  <div className='form-group col-md-4'>
                 
                  <label>Choose a Service: </label>
-                <div className='d-flex'>
+                <div className=''>
                  { <select  value= {service.name} onChange={handleChange} name ='service' id='services'>
                    {services.map((item,key) => (
                     <option key = {key} value ={item.id}>{item.name}</option>
@@ -206,9 +209,15 @@ const AddPurchase = () => {
            
                  }
 
-                 <input className ='counter' type="number" value= {count} onChange={handleCounter}
-
-/>   
+                <div className='add-quantity'>
+                 <p>Quantity: {count}</p>
+                
+                <div className='button-mg'>
+                 <button type = "button" onClick={handleIncrease}>+</button>
+                 <button type="button" onClick={handleDecrease}>-</button>
+                </div>
+                </div>
+                 {/* <input className ='counter' type="number" value= {count} onClick={handleCounter}/>    */}
 </div>
                  
                  </div>
@@ -246,7 +255,7 @@ const AddPurchase = () => {
                  <label>Price
                  <input className='form-control' type="number"
                  name="price"
-                 value = {order.price}
+                 value = {order.price * count}
                  onChange= {handleChange}
                 />
                 </label>

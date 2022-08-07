@@ -7,18 +7,14 @@
 }
 }
 
-.add-counter {
-  width : 2rem;
-  height: 1rem;
-  display: inline-block;
-  position: relative
-  
+
+.add-quantity {
+  display: inline-flex;
+  margin-top: 0.7rem
 }
 
-.counter {
-margin-left: 5px;
-width : 2.3rem;
-  height: 2rem;
+.button-mg {
+  margin-left: 1rem;
 }
 
 .new-service{
@@ -33,9 +29,7 @@ width : 2.3rem;
   border-width: 2px;
 }
 .container {
-  /* margin-right: 100px;
-  margin-left:30px;
-  padding-left: 50px; */
+  
   margin-top: 20px;
   position: "flex-direction"  
 }

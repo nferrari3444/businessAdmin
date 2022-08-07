@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
-import Navigation from './Navigation';
 import axios from 'axios';
 import Moment from 'moment';
 import {Link} from "react-router-dom"
@@ -8,10 +7,10 @@ import Layout from "./Layout";
 
 const NewService = () => {
 
-    const [service, setService] = useState({name:'', price:''});
+    const [service, setService] = useState({name:'', price:'', success: false});
     const [listServices, setListServices] = useState([]);
 
-    const {name, price} = service 
+    const {name, price, success} = service 
 
     const getServices = () => {
 
@@ -47,10 +46,6 @@ const NewService = () => {
         event.preventDefault()
            console.log(event.target.value)
 
-           // console.log(name)
-           // console.log(lastName)
-           // console.log(email)
-
        
        const isValid = Boolean(service.name && service.price)
 
@@ -59,7 +54,7 @@ const NewService = () => {
            axios.post('http://localhost:3001/newService',  service)
 
            .then(response => {
-               setService({...service, name:'', price: '', description:''})
+               setService({...service, name:'', price: '', description:'', success:true})
 
            })}
         }
@@ -75,7 +70,15 @@ const NewService = () => {
         .then(res => {getServices()})
     }
 
-
+    const showSuccess = () => {
+        if (success) {
+        return (
+        <div className='alert alert-info' >
+            <h2>New Service Created</h2>
+        </div>    
+            )
+        }
+    }
 
 
     return (
@@ -83,7 +86,7 @@ const NewService = () => {
         <Layout title="Edit or Register New Service " description="Add or Edit Service Information" button={true} className="container">
 
    
-             
+    {showSuccess()}       
     <div className='row'>
     <div className='col-md-6'>
     

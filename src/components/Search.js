@@ -19,19 +19,22 @@ const SearchProperty = (props) => {
 
 
     return (
+        <div className='row'>
         <div className='col-12'>
-        <div className='input-group-text px-2'>
-            <div className="input-group-prepend px-2">
+        <div className='input-group px-2'>
+            {/* <div className="input-group-prepend px-2"> */}
                 <span className='input-group-text px-5' id='name'>Customer Name</span>
-                </div>
+                {/* </div> */}
            
-        <input type="search" className='searchbar px-3 ms-2' onChange={handleChange("firstName")} name = "firstName" value={firstName}  placeholder='Customer Name' aria-label='customer name' aria-describedby='firstName'></input>        
+        <input type="search" className='searchbar px-3 ms-2' onChange={handleChange("firstName")} name = "firstName" value={firstName}  placeholder='Customer Name' aria-label='customer name' aria-describedby='name'></input>        
             
+    
         <span className='input-group-text px-5 ms-5' id='lastName'>Customer Last Name</span>
         <input type="search" className='searchbar px-2 ms-3' onChange={handleChange("lastName")} name = "lastName" value={lastName}  placeholder='Customer Last Name' aria-label='customer last name' aria-describedby='lastName'></input>
 
         </div>
         </div> 
+        </div>
         
 
     )

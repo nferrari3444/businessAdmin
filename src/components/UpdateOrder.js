@@ -1,7 +1,6 @@
 
 import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
-import Navigation from './Navigation';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import Moment from 'moment';
