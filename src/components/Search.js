@@ -26,7 +26,7 @@ const SearchProperty = (props) => {
                 <span className='input-group-text px-5' id='name'>Customer Name</span>
                 {/* </div> */}
            
-        <input type="search" className='searchbar px-3 ms-2' onChange={handleChange("firstName")} name = "firstName" value={firstName}  placeholder='Customer Name' aria-label='customer name' aria-describedby='name'></input>        
+        <input type="search" className='searchbar px-3 ms-3' onChange={handleChange("firstName")} name = "firstName" value={firstName}  placeholder='Customer Name' aria-label='customer name' aria-describedby='name'></input>        
             
     
         <span className='input-group-text px-5 ms-5' id='lastName'>Customer Last Name</span>

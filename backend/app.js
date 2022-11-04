@@ -34,7 +34,9 @@ app.use(express.urlencoded({extended: false}));
 
 //mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@currencycluster.1y7ya.mongodb.net/currencyUsers`, {useNewUrlParser: true});
 //mongodb+srv://nferrari3444:<password>@cluster1.iyhew.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster1.iyhew.mongodb.net/smallBusiness`,
+// `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster1.iyhew.mongodb.net/smallBusiness`
+
+mongoose.connect(process.env.DATABASE,
 {useNewUrlParser: true
 }
 );
@@ -250,8 +252,8 @@ app.get('/user/:email', function(req,res)  {
 //     req.order = order
 //     const {name, lastName, country, city, service, price,  date} = order
 
+const port = process.env.PORT || 8000;
 
-
-app.listen(3001, () => {
-    console.log('Server listening on port 3001');
+app.listen(port, () => {
+    console.log('Server listening on port 8000');
 });
