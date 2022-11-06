@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
 import axios from 'axios';
+import {API} from "../config";
 import { Link, useParams } from 'react-router-dom';
 import Moment from 'moment';
 import Layout from "./Layout";
@@ -34,7 +35,7 @@ const {name, lastName, country, city, service, price,  date, note} = orderToUpda
 
 const init = (orderId) => {
     
-    axios.get(`http://localhost:3001/order/${orderId}`)
+    axios.get(`${API}/order/${orderId}`)
 .then(data =>  
     { if(data.error) {
         setOrderToUpdate({...orderToUpdate, error:true, success:false})
@@ -77,7 +78,7 @@ const clickSubmit = (event) =>
 
     axios({
         method: 'put',
-        url: `http://localhost:3001/updateOrder/${orderId}`,
+        url: `${API}/updateOrder/${orderId}`,
         headers : {},
         data: {orderToUpdate}
     })

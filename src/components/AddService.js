@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
+import {API} from "../config";
 import axios from 'axios';
 import Moment from 'moment';
 import {Link} from "react-router-dom"
@@ -14,7 +15,7 @@ const NewService = () => {
 
     const getServices = () => {
 
-        axios.get('http://localhost:3001/services')
+        axios.get(`${API}/services`)
         .then(data => setListServices(data.data))
         //  console.log(data.data) ) //     )
 
@@ -51,7 +52,7 @@ const NewService = () => {
 
        if (isValid) {
 
-           axios.post('http://localhost:3001/newService',  service)
+           axios.post(`${API}/newService`,  service)
 
            .then(response => {
                setService({...service, name:'', price: '', description:'', success:true})
@@ -63,7 +64,7 @@ const NewService = () => {
     const destroy = (serviceId) => {
 
         console.log(serviceId)
-        axios.delete(`http://localhost:3001/deleteService/${serviceId}`)
+        axios.delete(`${API}/deleteService/${serviceId}`)
         .catch((error) => {
             console.log(error)
         })

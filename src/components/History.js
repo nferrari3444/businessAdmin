@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
 import axios from 'axios';
+import {API} from "../config";
 import {Link, useSearchParams} from "react-router-dom"
 import SearchProperty from "./Search";
 import UpdateOrder from "./UpdateOrder";
@@ -17,7 +18,7 @@ const GetOrders = () => {
 
     
     const ordersData = () => {
-        axios.get('http://localhost:3001/history')
+        axios.get(`${API}/history`)
         .then(res => {
        //     console.log(JSON.stringify(res.data))
             setOrders(res.data)

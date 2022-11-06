@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-
+import {API} from "../config";
 import '../styles/App.css';
 import Navigation from './Navigation';
 import axios from 'axios';
@@ -22,7 +22,7 @@ const AddPurchase = () => {
 
     const getServices = () => {
 
-        axios.get('http://localhost:3001/services')
+        axios.get(`${API}/services`)
         .then(data =>   setServices(data.data))
 
         .catch(function(error) { 
@@ -75,7 +75,7 @@ const AddPurchase = () => {
 
         if (isValid) {
 
-            axios.post('http://localhost:3001/createOrder',  order)
+            axios.post(`${API}/createOrder`,  order)
 
             .then(response => {
                 setOrder({

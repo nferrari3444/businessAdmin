@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Link} from "react-router-dom"
 import SearchProperty from "./Search";
 import Layout from "./Layout";
+import {API} from "../config"
 
 const GetCustomers = () => {
 
@@ -12,7 +13,7 @@ const GetCustomers = () => {
     const [q, setQ] = useState("");
     
     const customerData = () => {
-        axios.get('http://localhost:3001/viewCustomers')
+        axios.get(`${API}/viewCustomers`)
         .then(res => {
        //     console.log(JSON.stringify(res.data))
             setCustomers(res.data)

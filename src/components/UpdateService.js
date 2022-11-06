@@ -3,7 +3,7 @@ import '../styles/App.css';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import Layout from "./Layout";
-
+import {API} from "../config";
 
 const UpdateService = (props) => {
 
@@ -28,7 +28,7 @@ const UpdateService = (props) => {
 
     const init = (serviceId) => {
     
-        axios.get(`http://localhost:3001/service/${serviceId}`)
+        axios.get(`${API}/service/${serviceId}`)
     .then(data =>  
         { if(data.error) {
             setServiceToUpdate({...serviceToUpdate, error:true, success:false})
@@ -68,7 +68,7 @@ const UpdateService = (props) => {
         console.log(service)
         axios({
             method: 'put',
-            url: `http://localhost:3001/updateService/${serviceId}`,
+            url: `${API}/updateService/${serviceId}`,
             headers : {},
             data: {serviceToUpdate}
         })

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
 import axios from 'axios';
+import {API} from "../config";
 import {Link} from "react-router-dom"
 import Layout from "./Layout";
 
@@ -38,7 +39,7 @@ const Customer = () => {
             console.log(values)
 
             if (isValid) {
-            axios.post('http://localhost:3001/newCustomer', customer)
+            axios.post(`${API}/newCustomer`, customer)
              .then(data =>   
            {
                 if(data.error) {
