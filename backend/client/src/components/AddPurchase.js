@@ -132,7 +132,7 @@ const AddPurchase = () => {
             if (success) {
             return (
             <div className='alert alert-info' >
-                <h2>Orden Creada Correctamente</h2>
+                <h2>Orden Creada Correctamente!!</h2>
             </div>    
                 )
             }
