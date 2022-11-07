@@ -1,0 +1,194 @@
+
+@media  (min-width:1200px) {
+  
+  .input-space{
+  margin-left: 30px;
+  
+}
+}
+
+
+.add-quantity {
+  display: inline-flex;
+  margin-top: 0.7rem
+}
+
+.button-mg {
+  margin-left: 1rem;
+}
+
+.new-service{
+  border-right: green;
+  width: 300px;
+  height: 600px;
+}
+#services {
+  height: 35px;
+  border-radius: 10px;
+  border-color: green;
+  border-width: 2px;
+}
+.container {
+  
+  margin-top: 20px;
+  position: "flex-direction"  
+}
+
+.delete-badge {
+  cursor:pointer
+}
+.side-bar {
+ 
+  border-radius: 10px;
+  /* position:flex;  */
+  background-color: lightgray;
+  margin-left: 10px;
+  padding-top: 10px;
+  /* transition: 0.5s; */
+}
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+  background-color: #ffffff;
+}
+
+table {
+  margin-top: 3rem;
+  margin-left: 6rem;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%
+}
+
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+};
+
+table tr:nth-child(even){background-color: #f2f2f2}
+table tr:hover{background-color: #ddd;}
+
+table th {
+  padding: 12px 8px;
+  text-align: left;
+  background-color: #336699;
+  color: white;
+}
+
+.search {
+  margin-left: 10rem;
+  
+  display: flex;
+  width: 60%;
+}
+
+/**
+* border radius
+*/
+
+
+.btn,
+.jumbotron,
+.nav :hover {
+    border-radius: '0px';
+}
+
+ .jumbotron h2 , h4 {
+    text-align: center;
+} 
+
+.jumbotron .btn {
+  margin-top: 13.5vh;
+  margin-right: 10px;
+}
+
+/* .container .btn {
+  float: left;
+};  */
+/**
+
+* jumbotron animation
+*/
+
+h2 {
+  text-align: center;
+}
+
+h2 ,label {
+  font-weight: bold;
+  font-family: "Book Antiqua";
+  font-size: 1.2rem;
+}
+
+.button-text {
+  font-family: "Book Antiqua";
+  font-size: 1.2rem;
+}
+
+.searchbar{
+  height: 2.5rem;
+  border-radius: 5px;
+}
+
+
+.jumbotron {
+  width: 30wh;
+  height: 20vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.add-space {
+  margin-right: 60px;
+}
+
+/* .new-service-cont {
+  margin-left: -50px;
+} */
+
+.edit-service {
+  margin-left: 20px;
+  margin-right: 0px;
+  
+} 

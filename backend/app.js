@@ -252,6 +252,12 @@ app.get('/user/:email', function(req,res)  {
 //     req.order = order
 //     const {name, lastName, country, city, service, price,  date} = order
 
+
+app.use(express.static(path.join(__dirname, '/client/build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/client/build', 'index.html' ));
+})
+
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
