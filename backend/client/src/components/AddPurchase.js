@@ -200,6 +200,7 @@ const AddPurchase = () => {
                  <label>Choose a Service: </label>
                 <div className=''>
                  { <select  value= {service.name} onChange={handleChange} name ='service' id='services'>
+                   {console.log(services)}
                    {services.map((item,key) => (
                     <option key = {key} value ={item.id}>{item.name}</option>
                  
